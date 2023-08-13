@@ -2,21 +2,23 @@ import React, { useState } from "react";
 import "../styles/signup.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async(e) => {
+    e.preventDefault()
     // const data = {name:name, email:email, password:password}
+    
     axios
       .post("http://localhost:3001/", { email, password })
-      .then((result) => {
+      .then(result => {
         console.log(result);
-        if (result.data == "Success") {
+        console.log(result.data)
+        if (result.data === "Success") {
           navigate("/home");
         }
       })

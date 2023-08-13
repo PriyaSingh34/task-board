@@ -21,6 +21,7 @@ function Signup() {
       })
       .catch((err) => console.log(err));
   };
+ 
   return (
     <div className="signup">
       <h1 className="title">REGISTER</h1>
