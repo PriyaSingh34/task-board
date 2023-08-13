@@ -14,11 +14,11 @@ function Login() {
     // const data = {name:name, email:email, password:password}
     
     axios
-      .post("http://localhost:3001/", { email, password })
+      .post("http://localhost:3002/", { email, password })
       .then(result => {
         console.log(result);
         console.log(result.data)
-        if (result.data === "Success") {
+        if (result.data === "success") {
           navigate("/home");
         }
       })

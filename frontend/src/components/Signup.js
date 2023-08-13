@@ -14,7 +14,7 @@ function Signup() {
     e.preventDefault();
     // const data = {name:name, email:email, password:password}
     axios
-      .post("http://localhost:3001/register", { name, email, password })
+      .post("http://localhost:3002/register", { name, email, password })
       .then((result) => {
         console.log(result);
         navigate("/");
